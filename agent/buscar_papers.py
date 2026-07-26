@@ -3,9 +3,9 @@ import arxiv
 def buscar_papers(tema: str, cantidad: int = 5):
     client = arxiv.Client()
     busqueda = arxiv.Search(
-        query=tema,
+        query=f"all:{tema}",
         max_results=cantidad,
-        sort_by=arxiv.SortCriterion.SubmittedDate
+        sort_by=arxiv.SortCriterion.Relevance
     )
 
     resultados = []
